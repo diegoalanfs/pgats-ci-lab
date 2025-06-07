@@ -47,6 +47,6 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: relatorio
-          path: 'test-results/junit.xml' # Caminho padrão do arquivo JUnit XML gerado pelo Playwright
+          path: ./playwright-report
           reporter: jest-junit 
-          #path: ./playwright-report
+          #path: 'test-results/junit.xml' # Caminho padrão do arquivo JUnit XML gerado pelo Playwright
