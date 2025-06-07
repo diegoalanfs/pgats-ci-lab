@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Instalando Yarn
-        run: npm install -g yarn 
+        run: npm install -g yarn
 
       - name: Instalando dependencias
         run: yarn
@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Instalando Yarn
-        run: npm install -g yarn 
+        run: npm install -g yarn
 
       - name: Instalando dependencias
         run: yarn
