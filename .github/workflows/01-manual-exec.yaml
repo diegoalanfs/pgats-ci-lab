@@ -41,3 +41,10 @@ jobs:
       # executar os testes e2e
       - name: Executando Testes E2E
         run: yarn run e2e
+
+      #- uses: actions/upload-artifact@v4
+      - uses: dorny/test-reporter@v1 #ESSE AQUI È PRA EXIBIR O RELATORIO DIRETO NO SUMMARY DO GIT-ACTIONS
+        if: ${{ !cancelled() }}
+        with:
+          name: relatorio
+          path: ./playwright-report
