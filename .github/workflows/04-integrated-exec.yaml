@@ -27,6 +27,7 @@ jobs:
   unidade:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
+    needs: [inspecao]
 
     steps:
       # clone do projeto
@@ -44,6 +45,7 @@ jobs:
   e2e-tests:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
+    needs: [inspecao]
 
     # passos do script de build
     steps:
@@ -81,6 +83,7 @@ jobs:
   deploy:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
+    needs: [e2e-tests]
 
     steps:
       - name: Simulação do Deploy
