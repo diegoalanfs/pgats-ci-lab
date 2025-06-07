@@ -42,11 +42,9 @@ jobs:
       - name: Executando Testes E2E
         run: yarn run e2e --reporter=junit
 
-      #- uses: actions/upload-artifact@v4
-      - uses: dorny/test-reporter@v1 #ESSE AQUI È PRA EXIBIR O RELATORIO DIRETO NO SUMMARY DO GIT-ACTIONS
+      #- uses: dorny/test-reporter@v1 #ESSE AQUI È PRA EXIBIR O RELATORIO DIRETO NO SUMMARY DO GIT-ACTIONS
+      - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
           name: relatorio
-          path: 'results.xml'
-          reporter: jest-junit 
-          #path: 'test-results/junit.xml' # Caminho padrão do arquivo JUnit XML gerado pelo Playwright
+          path: ./playwright-report
